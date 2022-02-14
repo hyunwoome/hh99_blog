@@ -2,9 +2,7 @@
 
 ## API
 
-#### 게시글 ("/api/posts")
-
-|No|URL|METHOD|BODY|RETURN|
+#### 게시글 (/api/posts)
 
 | NO  | URL  | METHOD |         BODY         | RETURN |     DESC     |
 |:---:|:----:|:------:|:--------------------:|:------:|:------------:|
@@ -14,7 +12,7 @@
 |  4  | /:id |  PUT   | 제목, 작성자명, 작성 내용 중 하나 |        |  특정 게시글 수정   |
 |  5  | /:id | DELETE |          ID          |        |  특정 게시글 삭제   |  
 
-#### 댓글 ("/api/comments")
+#### 댓글 (/api/comments)
 
 | NO  | URL  | METHOD |    BODY     | RETURN |   DESC   |
 |:---:|:----:|:------:|:-----------:|:------:|:--------:|
