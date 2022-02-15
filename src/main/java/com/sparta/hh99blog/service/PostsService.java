@@ -14,11 +14,11 @@ public class PostsService {
     private final PostsRepository postsRepository;
 
     @Transactional
-    public Long update(Long id, PostsRequestDto requestDto) {
+    public Long update(Long id, PostsRequestDto postsRequestDto) {
         Posts posts = postsRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
         );
-        posts.update(requestDto);
+        posts.update(postsRequestDto);
         return posts.getId();
     }
 }

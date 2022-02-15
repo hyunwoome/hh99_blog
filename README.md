@@ -14,12 +14,12 @@
 
 #### 댓글 (/api/comments)
 
-| NO  | URL  | METHOD | BODY  | RETURN |   DESC   |
-|:---:|:----:|:------:|:-----:|:------:|:--------:|
-|  1  |  /   |  GET   |  ID   |        | 댓글 목록 조회 |
-|  2  |  /   |  POST  | 작성 내용 |        |  댓글 작성   |
-|  3  | /:id |  PUT   | 작성 내용 |        |  댓글 수정   |
-|  4  | /:id | DELETE |  ID   |        |  댓글 삭제   |
+| NO  | URL  | METHOD |   BODY    | RETURN |   DESC   |
+|:---:|:----:|:------:|:---------:|:------:|:--------:|
+|  1  |  /   |  GET   |    ID     |        | 댓글 목록 조회 |
+|  2  |  /   |  POST  | 이름, 작성 내용 |        |  댓글 작성   |
+|  3  | /:id |  PUT   |   작성 내용   |        |  댓글 수정   |
+|  4  | /:id | DELETE |    ID     |        |  댓글 삭제   |
 
 <br/>
 
@@ -27,7 +27,7 @@
 
 #### posts
 
-- [String] 작성자명
+- [String] 이름
 - [String] 제목
 - [String] 작성 내용
 - [Date] 작성 날짜
@@ -35,6 +35,7 @@
 
 #### comments
 
+- [String] 이름
 - [String] 작성 내용
 - [Date] 작성 날짜
 - [Date] 수정 날짜

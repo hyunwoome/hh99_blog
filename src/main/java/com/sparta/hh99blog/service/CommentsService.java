@@ -1,5 +1,6 @@
 package com.sparta.hh99blog.service;
 
+
 import com.sparta.hh99blog.dto.CommentsRequestDto;
 import com.sparta.hh99blog.models.Comments;
 import com.sparta.hh99blog.repository.CommentsRepository;
@@ -14,11 +15,11 @@ public class CommentsService {
     private final CommentsRepository commentsRepository;
 
     @Transactional
-    public Long update(Long id, CommentsRequestDto requestDto) {
+    public Long update(Long id, CommentsRequestDto commentsRequestDto) {
         Comments comments = commentsRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
         );
-        comments.update(requestDto);
+        comments.update(commentsRequestDto);
         return comments.getId();
     }
 }

@@ -15,7 +15,7 @@ public class CommentsController {
     private final CommentsRepository commentsRepository;
     private final CommentsService commentsService;
 
-    @GetMapping("/api/comments®")
+    @GetMapping("/api/comments")
     public List<Comments> getComments() {
         return commentsRepository.findAll();
     }
