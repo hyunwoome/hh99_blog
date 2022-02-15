@@ -19,7 +19,7 @@ public class PostsController {
     // #1. 전체 게시글 조회
     @GetMapping("/api/posts")
     public List<Posts> getPosts() {
-        return postsRepository.findAll();
+        return postsRepository.findAllByOrderByModifiedAtDesc();
     }
 
     // #2. 게시글 작성

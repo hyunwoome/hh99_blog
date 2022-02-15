@@ -17,7 +17,7 @@ public class CommentsController {
 
     @GetMapping("/api/comments")
     public List<Comments> getComments() {
-        return commentsRepository.findAll();
+        return commentsRepository.findAllByOrderByModifiedAtDesc();
     }
 
     @PostMapping("/api/comments")
