@@ -1,4 +1,4 @@
-package com.sparta.hh99blog.models;
+package com.sparta.hh99blog.domain;
 
 import com.sparta.hh99blog.dto.CommentsRequestDto;
 import lombok.Getter;
@@ -11,24 +11,29 @@ import javax.persistence.*;
 @Entity
 public class Comments extends Timestamped {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // #1. 이름
+    @Column(nullable = false)
+    private Long postId;
+
     @Column(nullable = false)
     private String name;
 
-    // #2. 내용
     @Column(nullable = false)
     private String content;
 
+    // 생성자
     public Comments(CommentsRequestDto commentsRequestDto) {
+        this.postId = commentsRequestDto.getPostId();
         this.name = commentsRequestDto.getName();
         this.content = commentsRequestDto.getContent();
     }
 
+    // 수정
     public void update(CommentsRequestDto commentsRequestDto) {
+        this.postId = commentsRequestDto.getPostId();
         this.name = commentsRequestDto.getName();
         this.content = commentsRequestDto.getContent();
     }

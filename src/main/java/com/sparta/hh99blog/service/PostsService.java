@@ -1,7 +1,7 @@
 package com.sparta.hh99blog.service;
 
 import com.sparta.hh99blog.dto.PostsRequestDto;
-import com.sparta.hh99blog.models.Posts;
+import com.sparta.hh99blog.domain.Posts;
 import com.sparta.hh99blog.repository.PostsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

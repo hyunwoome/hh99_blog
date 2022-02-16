@@ -1,7 +1,7 @@
 package com.sparta.hh99blog.controller;
 
 import com.sparta.hh99blog.dto.CommentsRequestDto;
-import com.sparta.hh99blog.models.Comments;
+import com.sparta.hh99blog.domain.Comments;
 import com.sparta.hh99blog.repository.CommentsRepository;
 import com.sparta.hh99blog.service.CommentsService;
 import lombok.RequiredArgsConstructor;
@@ -12,12 +12,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 public class CommentsController {
+
     private final CommentsRepository commentsRepository;
     private final CommentsService commentsService;
 
-    @GetMapping("/api/comments")
-    public List<Comments> getComments() {
-        return commentsRepository.findAllByOrderByModifiedAtDesc();
+    @GetMapping("/api/comments/{postId}")
+    public List<Comments> getComments(@PathVariable Long postId) {
+        return commentsRepository.findAllByPostId(postId);
     }
 
     @PostMapping("/api/comments")

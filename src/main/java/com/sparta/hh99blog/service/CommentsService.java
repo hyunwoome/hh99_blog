@@ -2,7 +2,7 @@ package com.sparta.hh99blog.service;
 
 
 import com.sparta.hh99blog.dto.CommentsRequestDto;
-import com.sparta.hh99blog.models.Comments;
+import com.sparta.hh99blog.domain.Comments;
 import com.sparta.hh99blog.repository.CommentsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
