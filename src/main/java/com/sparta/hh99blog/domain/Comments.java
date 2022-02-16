@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Getter
 @NoArgsConstructor
@@ -21,7 +22,8 @@ public class Comments extends Timestamped {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column()
+    @NotEmpty(message = "댓글 내용을 입력해주세요")
     private String content;
 
     // 생성자

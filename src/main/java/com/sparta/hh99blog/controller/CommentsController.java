@@ -7,6 +7,7 @@ import com.sparta.hh99blog.service.CommentsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -22,7 +23,7 @@ public class CommentsController {
     }
 
     @PostMapping("/api/comments")
-    public Comments createComment(@RequestBody CommentsRequestDto commentsRequestDto) {
+    public Comments createComment(@RequestBody @Valid CommentsRequestDto commentsRequestDto) {
         Comments comments = new Comments(commentsRequestDto);
         return commentsRepository.save(comments);
     }
