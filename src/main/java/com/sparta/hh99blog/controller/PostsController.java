@@ -2,6 +2,7 @@ package com.sparta.hh99blog.controller;
 
 import com.sparta.hh99blog.dto.PostsRequestDto;
 import com.sparta.hh99blog.domain.Posts;
+import com.sparta.hh99blog.repository.CommentsRepository;
 import com.sparta.hh99blog.repository.PostsRepository;
 import com.sparta.hh99blog.service.PostsService;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ public class PostsController {
 
     private final PostsRepository postsRepository;
     private final PostsService postsService;
+    private final CommentsRepository commentsRepository;
 
     @GetMapping("/api/posts")
     public List<Posts> getPosts() {
@@ -41,6 +43,7 @@ public class PostsController {
     @DeleteMapping("/api/posts/{id}")
     public Long deletePost(@PathVariable Long id) {
         postsRepository.deleteById(id);
+        commentsRepository.deleteAddTextByPostId(id);
         return id;
     }
 }
