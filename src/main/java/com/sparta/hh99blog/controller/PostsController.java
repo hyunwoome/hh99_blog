@@ -1,5 +1,6 @@
 package com.sparta.hh99blog.controller;
 
+import com.sparta.hh99blog.domain.PostsMapping;
 import com.sparta.hh99blog.dto.PostsRequestDto;
 import com.sparta.hh99blog.domain.Posts;
 import com.sparta.hh99blog.repository.CommentsRepository;
@@ -20,8 +21,8 @@ public class PostsController {
     private final CommentsRepository commentsRepository;
 
     @GetMapping("/api/posts")
-    public List<Posts> getPosts() {
-        return postsRepository.findAllByOrderByModifiedAtDesc();
+    public List<PostsMapping> getPosts() {
+        return postsRepository.findAllExceptContent();
     }
 
     @GetMapping("/api/posts/{id}")
